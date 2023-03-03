@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <title>Web App</title>
+        <meta charset="UTF-8">
+        <meta name="title" content="Web App"/>
+        <meta name="description" content="Web App"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+        <link rel="stylesheet" href="{% static 'styles/home.css' %}"/>
+    </head>
+    <body>
+        <form method="post" action="{% url 'return' %}">
+            {% csrf_token %}
+            <div class="vertical">
+                <h3 class="text">SEARCH</h3>
+                <input class="search-input" type="text" name="search" id="search_input" placeholder="https://www.google.com">
+                <button class="search-btn"  type="submit" name="next" id="login_btn">SEARCH</button>
+            </div>
+        </form> 
+    </body>
+</HTML>
